@@ -3,6 +3,7 @@ package com.georgiancollege.week06;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -37,6 +38,12 @@ public class BookTableController implements Initializable {
     @FXML
     private TableColumn<Book, Integer> unitsSoldColumn;
 
+    @FXML
+    private CheckBox availableCheckBox;
+
+    @FXML
+    private CheckBox expensiveCheckBox;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Book> books = DBUtility.getBooksFromDB();
@@ -52,6 +59,20 @@ public class BookTableController implements Initializable {
 
         tableView.getItems().addAll(books);
     }
+
+    @FXML
+    void manipulateTable(ActionEvent event) {
+        if(expensiveCheckBox.isSelected() && availableCheckBox.isSelected()){
+
+        } else if(expensiveCheckBox.isSelected() && !availableCheckBox.isSelected()){
+
+        } else if(!expensiveCheckBox.isSelected() && availableCheckBox.isSelected()){
+
+        } else {
+
+        }
+    }
+
 
     @FXML
     void addNewBook_onClick(ActionEvent event) throws IOException {
