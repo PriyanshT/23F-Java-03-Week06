@@ -56,7 +56,7 @@ public class DBUtility {
     }
 
     // static method to get data from database
-    public static ArrayList<Book> getBooksFromDB(){
+    public static ArrayList<Book> getBooksFromDB(String clause){
         ArrayList<Book> books = new ArrayList<>();
 
         // string to hold sql select statement
@@ -64,6 +64,7 @@ public class DBUtility {
                 "FROM books\n" +
                 "INNER JOIN sales\n" +
                 "ON books.book_id = sales.book_id\n" +
+                "WHERE " + clause + "\n" +
                 "GROUP BY books.book_id;";
 
         // establish a connection and run the query
@@ -96,7 +97,7 @@ public class DBUtility {
 
     public static XYChart.Series<String, Integer> getChartDataFromDB() {
         XYChart.Series<String, Integer> chartData = new XYChart.Series<>();
-        ArrayList<Book> books = getBooksFromDB();
+        ArrayList<Book> books = getBooksFromDB("1");
 
         chartData.setName("2023");
 
@@ -114,7 +115,7 @@ public class DBUtility {
 
     public static XYChart.Series<String, Integer> getAvailableChartDataFromDB() {
         XYChart.Series<String, Integer> chartData = new XYChart.Series<>();
-        ArrayList<Book> books = getBooksFromDB();
+        ArrayList<Book> books = getBooksFromDB("1");
 
         chartData.setName("2023");
 

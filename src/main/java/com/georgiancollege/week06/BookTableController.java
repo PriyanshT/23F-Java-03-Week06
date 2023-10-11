@@ -46,7 +46,7 @@ public class BookTableController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<Book> books = DBUtility.getBooksFromDB();
+        ArrayList<Book> books = DBUtility.getBooksFromDB("1");
         // System.out.println(books);
 
         bookIdColumn.setCellValueFactory(new PropertyValueFactory<>("bookId"));
@@ -62,14 +62,15 @@ public class BookTableController implements Initializable {
 
     @FXML
     void manipulateTable(ActionEvent event) {
+        tableView.getItems().clear();
         if(expensiveCheckBox.isSelected() && availableCheckBox.isSelected()){
-
+            tableView.getItems().addAll(DBUtility.getBooksFromDB("price > 20 AND is_available = true"));
         } else if(expensiveCheckBox.isSelected() && !availableCheckBox.isSelected()){
-
+            tableView.getItems().addAll(DBUtility.getBooksFromDB("price > 20"));
         } else if(!expensiveCheckBox.isSelected() && availableCheckBox.isSelected()){
-
+            tableView.getItems().addAll(DBUtility.getBooksFromDB("is_available = true"));
         } else {
-
+            tableView.getItems().addAll(DBUtility.getBooksFromDB("1"));
         }
     }
 
