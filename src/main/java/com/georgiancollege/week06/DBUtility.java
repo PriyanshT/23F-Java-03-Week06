@@ -111,4 +111,20 @@ public class DBUtility {
 
         return chartData;
     }
+
+    public static XYChart.Series<String, Integer> getAvailableChartDataFromDB() {
+        XYChart.Series<String, Integer> chartData = new XYChart.Series<>();
+        ArrayList<Book> books = getBooksFromDB();
+
+        chartData.setName("2023");
+
+        // use a for loop and add data to variable chartData
+        for (Book book:books) {
+            if(book.isAvailable()) {
+                chartData.getData().add(new XYChart.Data<>(book.getBookName(), book.getUnitsSold()));
+            }
+        }
+
+        return chartData;
+    }
 }
