@@ -1,0 +1,8 @@
+.root{
+    -fx-background-color: #008170;
+}
+
+.topLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #F99417;
+}

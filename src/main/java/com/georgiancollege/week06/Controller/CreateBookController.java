@@ -1,5 +1,8 @@
-package com.georgiancollege.week06;
+package com.georgiancollege.week06.Controller;
 
+import com.georgiancollege.week06.Utilities.DBUtility;
+import com.georgiancollege.week06.Model.Book;
+import com.georgiancollege.week06.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

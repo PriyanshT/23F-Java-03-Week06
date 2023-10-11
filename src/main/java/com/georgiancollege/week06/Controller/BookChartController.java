@@ -1,5 +1,7 @@
-package com.georgiancollege.week06;
+package com.georgiancollege.week06.Controller;
 
+import com.georgiancollege.week06.Utilities.DBUtility;
+import com.georgiancollege.week06.Utilities.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,9 +14,6 @@ import javafx.scene.control.RadioButton;
 import java.io.IOException;
 import java.net.URL;
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class BookChartController implements Initializable {

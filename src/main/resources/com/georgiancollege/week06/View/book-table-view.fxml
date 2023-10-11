@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.georgiancollege.week06.BookTableController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.georgiancollege.week06.Controller.BookTableController">
    <children>
       <BorderPane layoutX="200.0" layoutY="79.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Label alignment="CENTER" prefHeight="30.0" prefWidth="128.0" text="Book Table View" BorderPane.alignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="164.0" styleClass="topLabel" text="Book Table View" BorderPane.alignment="CENTER" />
          </top>
          <center>
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">

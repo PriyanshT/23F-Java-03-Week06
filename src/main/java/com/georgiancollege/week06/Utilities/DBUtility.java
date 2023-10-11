@@ -1,10 +1,10 @@
-package com.georgiancollege.week06;
+package com.georgiancollege.week06.Utilities;
 
+import com.georgiancollege.week06.Model.Book;
 import javafx.scene.chart.XYChart;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class DBUtility {
     // variables for username, password and connection url
